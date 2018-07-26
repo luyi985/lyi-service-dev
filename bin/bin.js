@@ -5,7 +5,7 @@ const { exec } = require('child_process')
 const srcPath = path.join(__dirname, '../lyi-service-dev');
 const targetPath = process.cwd()
 
-const fileToCopy = ['.dockfile', '.eslintrc.js', '.prettierrc', 'jest.config.js'];
+const fileToCopy = ['.dockerfile', '.eslintrc.js', '.prettierrc', 'jest.config.js'];
 
 function copyFiles() {
     fileToCopy.forEach(file => {
