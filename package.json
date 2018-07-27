@@ -26,12 +26,24 @@
   },
   "homepage": "https://github.com/luyi985/lyi-service-dev#readme",
   "bin": {
-    "lyi-service-dev": "bin/bin.js"
+    "lyi-service-dev": "./bin/cli.js"
   },
   "dependencies": {
     "config": "^1.31.0",
     "express": "^4.16.3"
   },
+  "files": [
+    "/__test__",
+    "/bin",
+    "/jest.config.js",
+    "/app",
+    "/config",
+    "/package.json",
+    "/*.dockerfile",
+    "/*.eslintrc.js",
+    "/*.prettierrc",
+    "/template"
+  ],
   "devDependencies": {
     "eslint": "^5.2.0",
     "husky": "^0.14.3",
