@@ -42,7 +42,7 @@
     "/*.dockerfile",
     "/*.eslintrc.js",
     "/*.prettierrc",
-    "/template"
+    "/*.gitignore"
   ],
   "devDependencies": {
     "eslint": "^5.2.0",
