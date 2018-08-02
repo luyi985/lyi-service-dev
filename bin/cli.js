@@ -5,7 +5,7 @@ const { exec } = require('child_process')
 const srcPath = path.join(__dirname, '..');
 const targetPath = process.cwd()
 
-const fileToCopy = ['.dockerfile', '.eslintrc.js', '.prettierrc', 'jest.config.js', '.gitignore'];
+const fileToCopy = ['.dockerfile', '.eslintrc.js', '.prettierrc', 'jest.config.js'];
 
 function copyFiles() {
     fileToCopy.forEach(file => {
@@ -37,6 +37,10 @@ function updatePackageJson(error, stdout, stderr) {
     }
 }
 
+function writeGitIgnore() {
+    fs.writeFileSync(`${targetPath}/.gitignore`, 'node_modules');
+}
+
 function npmInit(callBack) {
     if (fs.existsSync(`${targetPath}/package.json`)) {
         callBack();
@@ -46,6 +50,7 @@ function npmInit(callBack) {
 }
 
 copyFiles();
+writeGitIgnore();
 npmInit(updatePackageJson)
 exec(`cp -rv ${srcPath}/app ${targetPath}/app`);
 exec(`cp -rv ${srcPath}/bin ${targetPath}/bin`);

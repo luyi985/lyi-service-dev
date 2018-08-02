@@ -41,8 +41,7 @@
     "/package.json",
     "/*.dockerfile",
     "/*.eslintrc.js",
-    "/*.prettierrc",
-    "/*.gitignore"
+    "/*.prettierrc"
   ],
   "devDependencies": {
     "eslint": "^5.2.0",
