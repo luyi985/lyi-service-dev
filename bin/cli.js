@@ -38,6 +38,9 @@ function updatePackageJson(error, stdout, stderr) {
 }
 
 function writeGitIgnore() {
+    if (fs.existsSync(`${targetPath}/.gitignore`)) {
+        return;
+    }
     fs.writeFileSync(`${targetPath}/.gitignore`, 'node_modules');
 }
 
