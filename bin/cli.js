@@ -48,7 +48,7 @@ function npmInit(callBack) {
     if (fs.existsSync(`${targetPath}/package.json`)) {
         callBack();
         return;
-    }    
+    }
     exec('npm init -y', callBack);
 }
 

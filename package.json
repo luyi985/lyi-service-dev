@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node app/index.js",
-    "dev": "nodemon --watch app/**/**.js --exec npm start",
+    "dev": "nodemon --watch app -e js,jsx,json --exec npm start",
     "test": "jest",
     "fmt": "prettier --config .prettierrc --write app/**/*.{js,jsx,json} app/**/**/*.{js,jsx,json}",
     "lint": "eslint app/**/**/*.js app/**/*.js",
@@ -52,7 +52,6 @@
     "prettier": "^1.13.7"
   },
   "lint-staged": {
-    "app/**/**/*.{js,jsx,json}": "prettier --config .prettierrc --write",
-    "app/**/*.{js,jsx,json}": "prettier --config .prettierrc --write"
+    "{app,__test__}/{**/**/*,**/*,*}.{js,jsx,json}": ["prettier --config .prettierrc --write", "git add ."]
   }
 }
